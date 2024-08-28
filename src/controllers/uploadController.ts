@@ -28,8 +28,7 @@ const uploadImage = async (req: Request, res: Response) => {
     });
   }
 
-  // Aqui, você integraria a API Gemini para processar a imagem
-  // Vamos simular essa parte por enquanto
+  // integração da API Gemini para processar a imagem
 
   // Simulação de resposta da API Gemini
   const fakeResponse = {

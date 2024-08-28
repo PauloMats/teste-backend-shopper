@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import uploadImage from './controllers/uploadController';
 
 dotenv.config();
 
@@ -15,3 +16,5 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+app.post('/upload', uploadImage);

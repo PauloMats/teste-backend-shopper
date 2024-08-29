@@ -12,5 +12,21 @@ services:
       - .env
     environment:
       NODE_ENV: development
+      DATABASE_URL: "file:./data/db.sqlite3"
     ports:
       - '3000:3000'
+    command: >
+      sh -c "
+      npm install &&
+      npm run migrate &&
+      npm run start:dev
+      "
+    depends_on:
+      - db
+
+  db:
+    image: nouchka/sqlite3
+    container_name: shopper-db
+    volumes:
+      - ./data:/data
+    command: tail -f /dev/null
